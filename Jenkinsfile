@@ -4,7 +4,7 @@ node {
   }
   stage('SonarQube Analysis') {
     withSonarQubeEnv() {
-      sh "sonar-scanner"
+      sh "fr_sonar"
     }
   }
 }
