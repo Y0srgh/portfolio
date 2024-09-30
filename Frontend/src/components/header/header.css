@@ -1,0 +1,15 @@
+.header-container{
+    background-color: var(--gray-dark);
+    width: 100%;
+    height: 110px;
+    border-radius: 14px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr;
+    padding-left: 3%;
+}
+
+.profile-picture-container{
+    background-color: brown;
+    position: relative;
+    top: -20%;
+}

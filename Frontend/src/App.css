@@ -1,0 +1,28 @@
+body {
+  background-color: var(--gray-darkest);
+
+}
+
+.triangle{
+  height: 42.45vh;
+  position: fixed;
+}
+
+.triangle-top{
+  top: 0;
+  left: 0;
+}
+
+.triangle-bottom{
+  bottom: 0;
+  right: 0;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 3.55vw;
+  left: 25%;
+  width: 50vw;
+}
