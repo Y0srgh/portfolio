@@ -6,6 +6,7 @@ node {
   stage('Backend') {
     dir('backend') {
       sh 'npm install'
+      sh 'echo "done"'
     }
   }
   
