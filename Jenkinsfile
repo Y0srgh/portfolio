@@ -21,7 +21,15 @@ node {
         }
     }
 
+    stage('Check Coverage Files') {
+        script {
+            dir('Frontend/coverage') {
+                sh 'ls -al'
+            }
+        }
+    }
+
     stage('Publish Coverage Report') {
-        publishCoverage adapters: [jacocoAdapter('Frontend/coverage/**/*.xml')]
+        publishCoverage adapters: [genericAdapter('Frontend/coverage/lcov.info')]
     }
 }
