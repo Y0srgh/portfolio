@@ -9,23 +9,19 @@ node {
         }
     }
 
-
-        stage('Run Tests with Coverage') {
-            steps {
-                script {
-                    dir('Frontend') {
-                        sh 'npm test --coverage'
-                    }
-                }
-            }
+    stage('Frontend') {
+        dir('Frontend') {
+            sh 'npm install'
         }
+    }
 
-        stage('Publish Coverage Report') {
-            steps {
-                script {
-                    publishCoverage adapters: [jacocoAdapter('Frontend/coverage/**/*.xml')] 
-                }
-            }
+    stage('Run Tests with Coverage') {
+        dir('Frontend') {
+            sh 'npm test --coverage'
         }
+    }
 
+    stage('Publish Coverage Report') {
+        publishCoverage adapters: [jacocoAdapter('Frontend/coverage/**/*.xml')]
+    }
 }
