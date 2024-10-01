@@ -13,7 +13,6 @@ node {
         stage('Run Tests with Coverage') {
             steps {
                 script {
-                    // Run tests with coverage in the Frontend directory
                     dir('Frontend') {
                         sh 'npm test --coverage'
                     }
@@ -24,9 +23,7 @@ node {
         stage('Publish Coverage Report') {
             steps {
                 script {
-                    // Assuming the coverage report is generated in the 'Frontend/coverage' directory
-                    // You may need to adjust the path according to where Jest outputs the coverage files
-                    publishCoverage adapters: [jacocoAdapter('Frontend/coverage/**/*.xml')] // Adjust the pattern if needed
+                    publishCoverage adapters: [jacocoAdapter('Frontend/coverage/**/*.xml')] 
                 }
             }
         }
