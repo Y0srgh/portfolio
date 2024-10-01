@@ -1,25 +1,15 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('SCM') {
-            steps {
-                checkout scm
-            }
+node {
+    stage('SCM') {
+        checkout scm
+    }
+    stage('SonarQube Analysis') {
+        def scannerHome = tool 'SonarScanner'
+        withSonarQubeEnv() {
+            sh "${scannerHome}/bin/sonar-scanner"
         }
+    }
 
-        stage('SonarQube Analysis') {
-            steps {
-                script {
-                    def scannerHome = tool 'SonarScanner'
-                    withSonarQubeEnv() {
-                        sh "${scannerHome}/bin/sonar-scanner"
-                    }
-                }
-            }
-        }
-
-        stage('Install Dependencies') {
+    stage('Install Dependencies') {
             steps {
                 script {
                     // Navigate to the Frontend directory and install dependencies
@@ -28,14 +18,14 @@ pipeline {
                     }
                 }
             }
-        }
+    }
 
         stage('Run Tests with Coverage') {
             steps {
                 script {
                     // Run tests with coverage in the Frontend directory
                     dir('Frontend') {
-                        sh 'npm test -- --coverage'
+                        sh 'npm test --coverage'
                     }
                 }
             }
@@ -50,7 +40,6 @@ pipeline {
                 }
             }
         }
-    }
 
     post {
         always {
