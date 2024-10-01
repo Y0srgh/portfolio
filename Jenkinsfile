@@ -9,16 +9,6 @@ node {
         }
     }
 
-    stage('Install Dependencies') {
-            steps {
-                script {
-                    // Navigate to the Frontend directory and install dependencies
-                    dir('Frontend') {
-                        sh 'npm install'
-                    }
-                }
-            }
-    }
 
         stage('Run Tests with Coverage') {
             steps {
@@ -41,10 +31,4 @@ node {
             }
         }
 
-    post {
-        always {
-            // Archive coverage report and other artifacts for later review
-            archiveArtifacts artifacts: 'Frontend/coverage/**/*', allowEmptyArchive: true
-        }
-    }
 }
