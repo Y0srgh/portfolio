@@ -21,8 +21,17 @@
     },
     "collectCoverage": true,
     "coverageReporters": ["json", "lcov", "text", "clover"], 
-    "coverageDirectory": "coverage"
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/index.js", 
+      "!**/node_modules/**", 
+      "!**/coverage/**"
+  ]
   },
+
+
+
   "dependencies": {
     "@testing-library/jest-dom": "^6.5.0",
     "axios": "^1.7.7",
