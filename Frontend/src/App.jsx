@@ -1,6 +1,6 @@
 import React from 'react'
-import triangleTop from "/triangles-top.svg";
-import triangleBottom from "/triangles-bottom.svg";
+import triangleTop from "./assets/triangles-top.svg";
+import triangleBottom from "./assets/triangles-bottom.svg";
 import "./App.css";
 import Header from "./components/header/Header";
 
