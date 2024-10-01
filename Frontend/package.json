@@ -17,8 +17,9 @@
     ],
     "testEnvironment": "jsdom",
     "moduleNameMapper": {
-      "\\.(css|less|scss)$": "jest-css-modules"
+      "\\.(css|less|scss|svg)$": "jest-css-modules"
     },
+
     "collectCoverage": true,
     "coverageReporters": ["json", "lcov", "text", "clover"], 
     "coverageDirectory": "coverage",

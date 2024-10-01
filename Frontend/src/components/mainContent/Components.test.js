@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import App from './App';
+import Components from './Components';
 
-test('renders the App component', () => {
-  const { container } = render(<App />);
+test('renders the Components component', () => {
+  const { container } = render(<Components />);
   expect(container).toBeInTheDocument(); 
 });

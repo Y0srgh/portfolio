@@ -1,5 +1,4 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import React from 'react'
 import triangleTop from "/triangles-top.svg";
 import triangleBottom from "/triangles-bottom.svg";
 import "./App.css";
