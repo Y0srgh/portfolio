@@ -22,10 +22,8 @@ node {
     }
 
     stage('Check Coverage Files') {
-        script {
-            dir('Frontend/coverage') {
-                sh 'ls -al'
-            }
+        dir('Frontend/coverage') {
+            sh 'ls -al'
         }
     }
 
