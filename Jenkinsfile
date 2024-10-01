@@ -27,7 +27,5 @@ node {
         }
     }
 
-    stage('Publish Coverage Report') {
-        publishCoverage adapters: [genericAdapter('Frontend/coverage/lcov.info')]
-    }
+   
 }
