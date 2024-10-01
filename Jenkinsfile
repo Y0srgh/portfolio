@@ -8,7 +8,6 @@ node {
             sh "${scannerHome}/bin/sonar-scanner"
         }
     }
-
     stage('Frontend') {
         dir('Frontend') {
             sh 'npm install'
