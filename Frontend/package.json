@@ -26,7 +26,8 @@
       "src/**/*.{js,jsx}",
       "!**/index.js", 
       "!**/node_modules/**", 
-      "!**/coverage/**"
+      "!coverage/**",
+      "!**/**.config.**"
   ]
   },
 
